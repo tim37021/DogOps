@@ -9,4 +9,4 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: $HOME/.bun/bin/bun install
-      - run: $HOME/.bin/bin/bun run build
+      - run: $HOME/.bun/bin/bun run build
