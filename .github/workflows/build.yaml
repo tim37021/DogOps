@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: curl -fsSL https://bun.sh/install | bash
-      - run: echo ${{ runner.home }}/.bun/bin >> $GITHUB_PATH
+      - run: echo $HOME/.bun/bin >> $GITHUB_PATH
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: bun install
