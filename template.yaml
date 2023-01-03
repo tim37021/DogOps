@@ -1,0 +1,24 @@
+name: 'This monitor is created by dog-op 222'
+type: query alert
+query: percentile(last_10m):p75:fazz.payment.api.duration{env:production AND
+  api_name IN (create_payment,create_disbursement) AND api_version:v4} by
+  {api_name} > 8000
+message: |-
+  This monitor is created by dog-op, hehehe
+tags: []
+options:
+  thresholds:
+    critical: 8000
+    warning: 5000
+  notify_audit: false
+  require_full_window: false
+  notify_no_data: false
+  renotify_interval: 0
+  include_tags: true
+  new_group_delay: 60
+  silenced: {}
+multi: true
+restricted_roles:
+  - 486fc392-1877-11ed-b078-da7ad0900002
+priority: 1
+matching_downtimes: []
