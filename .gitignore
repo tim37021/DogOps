@@ -1,0 +1,5 @@
+*.yaml
+.env
+dist
+node_modules
+dogops.config.js
