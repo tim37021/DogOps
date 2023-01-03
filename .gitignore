@@ -1,4 +1,3 @@
-*.yaml
 .env
 dist
 node_modules
