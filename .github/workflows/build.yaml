@@ -1,0 +1,12 @@
+name: Build
+run-name: Build DogOps 🚀
+on: [push]
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsSL https://bun.sh/install | bash
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: bun install
+      - run: bun run build
