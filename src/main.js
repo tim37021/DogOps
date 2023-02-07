@@ -147,7 +147,8 @@ async function status_action(opts) {
     const newly_created = lodash.difference(Object.keys(fdict), list.map(v => `${v.id}`))
 
     orphans.forEach((monitor_id, idx) => {
-        console.log(`Missing ${monitor_id}, will pull to ${dogops_config.pullLocation(list[idx])}`)
+	const m = list.filter(m => m.id == monitor_id)[0]
+        console.log(`Missing ${monitor_id}, will pull to ${dogops_config.pullLocation(m)}`)
         synced = false
     })
     
@@ -160,7 +161,7 @@ async function status_action(opts) {
         try {
             dogops_config.validators.default(fdict[l.id].body)
         } catch(e) {
-            console.error(clc.red(`${fdict[l.id].filename} does not pass the validator, message: ${e}`))
+            console.error(clc.red(`${fdict[l.id].filename}(https://app.datadoghq.com/monitors/${l.id}) does not pass the validator, message: ${e}`))
             error = true
         }
         const diff = compare_monitors(l, fdict[l.id].body)

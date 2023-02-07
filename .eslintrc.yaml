@@ -1,0 +1,4 @@
+parserOptions:
+  ecmaVersion: latest
+env: 
+  es2021: true

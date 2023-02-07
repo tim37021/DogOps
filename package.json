@@ -14,7 +14,6 @@
     "@datadog/datadog-api-client": "^1.6.0",
     "bluebird": "^3.7.2",
     "cli-color": "^2.0.3",
-    "diff": "^5.1.0",
     "diffler": "^2.0.4",
     "dotenv": "^16.0.3",
     "getopts": "^2.3.0",
